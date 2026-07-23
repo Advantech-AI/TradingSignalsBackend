@@ -1,0 +1,14 @@
+# Variables de entorno (SECRETOS - NUNCA SUBIR)
+.env
+.env.local
+.env.*.local
+
+# Dependencias
+node_modules/
+
+# Archivos de compilación de TypeScript
+dist/
+build/
+
+# Logs
+*.log
