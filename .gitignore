@@ -1,4 +1,4 @@
-# Variables de entorno (SECRETOS - NUNCA SUBIR)
+# Enviorment Variables
 .env
 .env.local
 .env.*.local
