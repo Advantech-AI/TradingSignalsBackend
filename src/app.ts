@@ -17,8 +17,7 @@ const allowedOrigins = [
   "http://localhost:5173",
   "http://127.0.0.1:5173",
   process.env.FRONTEND_URL,
-  // Agrega acá las preview URLs de Vercel que uses para testing con tu equipo,
-  // ej. "https://tu-proyecto-git-branch-usuario.vercel.app"
+
 ].filter(Boolean);
 
 app.use((req, res, next) => {
