@@ -1,18 +1,14 @@
-import { createClient } from "@supabase/supabase-js";
-import dotenv from 'dotenv'     
+import { createClient } from '@supabase/supabase-js';
+import dotenv from 'dotenv';
+dotenv.config();
 
-dotenv.config()
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-const supabaseURL = process.env.SUPABASE_URL;
-const supabase_key = process.env.SUPABASE_KEY;
-
-
-if(!supabaseURL || !supabase_key){
-    throw new Error(
-    'Error: Las variables SUPABASE_URL o SUPABASE_KEY no están definidas en el archivo .env'
-  );
+if (!supabaseUrl || !supabaseServiceKey) {
+  throw new Error("There's not supabase environment variable.");
 }
 
-
-
-export const supabaseclient = createClient(supabaseURL, supabase_key)
+export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey, {
+  auth: { persistSession: false, autoRefreshToken: false },
+});
